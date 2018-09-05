@@ -1,0 +1,1 @@
+This is a github project that familiarizes you with working in the bash. Navigating directories, printing their contents, and more.

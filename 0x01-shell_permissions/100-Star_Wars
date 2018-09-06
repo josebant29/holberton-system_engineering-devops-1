@@ -1,2 +1,1 @@
-#!/bin/bash
-mplayer -vo *.mp4
+#!/bin/bash                                                                     mplayer -vo *.mp4

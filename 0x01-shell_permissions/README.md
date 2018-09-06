@@ -1,0 +1,1 @@
+This is a project that will familiarize you with the Unix command line and specifically changing user permissions.

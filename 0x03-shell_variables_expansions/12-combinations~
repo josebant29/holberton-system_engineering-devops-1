@@ -1,0 +1,2 @@
+#!/bin/bash
+echo -ne "\b"{a..z}{a..z}"\n"

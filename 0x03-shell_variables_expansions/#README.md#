@@ -1,0 +1,2 @@
+This project further explores the bash. We take a closer look at working with variables and expansions. We use variables that come preinstalled with shell and create some of our own. We also make use of aliases. Aliasesare useful for numerous reasons, one of which is to save yourself from typing cumbersome or obscure command sequences by renaming them to a single word. An alias is set as follows:
+     $alias rm='

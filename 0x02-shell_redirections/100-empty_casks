@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -empty | tr "/" "\n" | sort -u
+find . -empty -printf "%f"

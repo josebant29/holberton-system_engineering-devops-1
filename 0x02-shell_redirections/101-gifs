@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -not -path '*/\.*' -type f -name "*.gif" -printf "%f\n" | cut -f 1 -d "." | sort
+find . -not -path '*/\.*' -type f -name "*.gif" -printf "%f\n" | cut -f 1 -d "."

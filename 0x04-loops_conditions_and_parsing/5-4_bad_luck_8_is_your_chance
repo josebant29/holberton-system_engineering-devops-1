@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Script displays bad luck on 4th loop iteration
+# Displays good luck on 8th loop iteration
+# Displays Holberton School for the other iterations
+
+i="0"
+
+while [ $i -lt 10 ]; do
+	if [ $i -eq 4 ]; then
+		echo bad luck
+	elif [ $i -eq 8 ]; then
+		echo good luck
+	else
+		echo Holberton School
+	fi
+	let i+=1
+done

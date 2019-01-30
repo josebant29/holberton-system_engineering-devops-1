@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Script prints 'To infinity and beyond' until killed
+
+while :
+do
+	echo To infinity and beyond
+	sleep 2
+done

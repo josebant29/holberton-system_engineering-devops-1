@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Script kills '4-to_infinity_and_beyond' process
+# Script echoes 'I am invincible'
+# Ignores SIGTERM and SIGINT using trap
 
 trap "echo I am invincible!!!" SIGTERM SIGINT
 while :

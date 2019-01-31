@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
 
 int infinite_while(void);
 
@@ -9,6 +11,7 @@ int infinite_while(void);
  */
 int main(void)
 {
+	pid_t child;
 	unsigned int i;
 
 	for (i = 0; i < 5; i++)

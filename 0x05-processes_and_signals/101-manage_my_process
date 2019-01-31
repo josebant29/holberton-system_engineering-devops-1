@@ -10,11 +10,13 @@ elif [ "$1" == "stop" ]
 then
 	pkill -f "./manage_my_process"
 	sudo rm -f /var/run/my_process.pid
+	sudo rm -f /tmp/my_process
 	echo "manage_my_process stopped"
 elif [ "$1" == "restart" ]
 then
 	pkill -f "./manage_my_process"
 	sudo rm -f /var/run/my_process.pid
+	sudo rm -f /tmp/my_process
 	sudo ./manage_my_process &
 	echo "$!" > /var/run/my_process.pid
 	echo "manage_my_process restarted"

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Script prints "I am alive!" until killed
+
+touch /tmp/my_process
+while :
+do
+	echo "I am alive!" >> /tmp/my_process
+	sleep 2
+done

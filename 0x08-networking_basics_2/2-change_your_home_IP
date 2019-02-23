@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+cp /etc/hosts ~/hosts.tmp
+sed -i s/127.*$/127.0.0.2\\tlocalhost\\n8.8.8.8\\tfacebook.com/g ~/hosts.tmp
+cp -f ~/hosts.tmp /etc/hosts

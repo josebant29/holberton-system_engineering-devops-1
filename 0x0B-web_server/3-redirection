@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Redirects /redirect_me to another page
+sudo apt-get -y update
+sudo apt-get -y install nginx
+echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
+sudo service nginx restart
+sudo sed -i "30i location /redirect_me {\n return 301 https://www.holbertonschool.com/;\n}\n" /etc/nginx/sites-available/default
+sudo service nginx restart

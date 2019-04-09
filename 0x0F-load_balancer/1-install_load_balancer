@@ -1,18 +1,12 @@
 #!/usr/bin/env bash
 # Install load balancer
 
-apt-get update
-apt-get -y install haproxy
-sed -i "s/ENABLED=0/ENABLED=1/" /etc/default/haproxy
-echo "
-frontend localserv
-         bind *:80
-         mode http
-         default_backend webservs
-backend webservs
-        mode http
-        balance roundrobin
-        server 531-web-01 34.73.145.109:80
-        server 532-web-02 35.196.46.86:80
-" >> /etc/haproxy/haproxy.cfg
-service haproxy restart
+
+CFG="\\\nlisten appname 0.0.0.0:80\n\tmode http\n\tbalance roundrobin\n\toption httpclose\n\toption forwardfor\n\tserver 531-web-01 34.73.123.158 check\n\tserver 531-web-02 34.73.111.24 check\n"
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo apt-get install -y haproxy=1.8\*
+sudo sed -i "s/ENABLED=0/ENABLED=1/" /etc/default/haproxy
+sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.backup
+sudo sed -i "\$a $CFG" /etc/haproxy/haproxy.cfg
+sudo service haproxy start

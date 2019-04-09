@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Configures a custom 404 page
+# Configures a cutsom header
+FILE=/etc/nginx/sites-available/default
 sudo apt-get -y update
 sudo apt-get -y install nginx
-HEAD="\t\tadd_header X-Served-By $HOSTNAME;"
-sudo sed -i "42i\ $HEAD" /etc/nginx/sites-available/default
+sudo sed -i "23i \\\tadd_header X-Served-By \$hostname;" $FILE
 sudo service nginx restart

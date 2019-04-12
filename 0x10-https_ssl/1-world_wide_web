@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Prints information about subdomain and IP
+print_rec ()
+{
+    NAME="dig "$2.$1" | grep -A1 'ANSWER SECTION:' | awk -F' ' '{ printf $4 }'"
+    printf " record and points to "
+    IP="dig "$2.$1" | grep -A1 'ANSWER SECTION:' | awk -F' ' '{ printf $5 }'"
+	echo "The subdomain $2 is a $NAME record and points to $IP"
+}
+
+if [ $# -eq 1 ]; then
+   for subdomains in "www" "lb-01" "web-01" "web-02"; do
+       print_rec "$1" "$2"
+   done
+else
+    print_rec "$1" "$subdomains"
+fi

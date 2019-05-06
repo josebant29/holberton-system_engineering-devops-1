@@ -3,9 +3,9 @@
 Returns info for a given employee using API.
 """
 
+import csv
 import sys
 
-import csv
 import requests
 
 

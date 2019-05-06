@@ -5,7 +5,6 @@ Returns info for a given employee using API.
 
 import csv
 import json
-
 import requests
 
 

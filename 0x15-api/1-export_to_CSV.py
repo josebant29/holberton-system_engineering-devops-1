@@ -4,9 +4,8 @@ Returns info for a given employee using API.
 """
 
 import csv
-import sys
-
 import requests
+import sys
 
 
 def get_employee_name(e_id):

@@ -59,13 +59,17 @@ def export_to_csv(e_id, name, tasks):
             'name',
             'completed',
             'title']
-        writer = csv.DictWriter(f, quoting=csv.QUOTE_ALL, fieldnames=fieldnames)
+        writer = csv.DictWriter(
+            f,
+            quoting=csv.QUOTE_ALL,
+            fieldnames=fieldnames)
         for task in tasks:
             writer.writerow({
                 'title': task.get('title'),
                 'completed': task.get('completed'),
                 'name': name,
                 'e_id': e_id})
+
 
 def export_to_json(e_id, name, tasks):
     wrapper = {}

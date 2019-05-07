@@ -58,7 +58,10 @@ def export_to_csv(filename, e_id, name, tasks):
             'name',
             'completed',
             'title']
-        writer = csv.DictWriter(f, quoting=csv.QUOTE_ALL, fieldnames=fieldnames)
+        writer = csv.DictWriter(
+            f,
+            quoting=csv.QUOTE_ALL,
+            fieldnames=fieldnames)
         for task in tasks:
             writer.writerow({
                 'title': task.get('title'),

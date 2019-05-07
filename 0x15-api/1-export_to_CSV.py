@@ -16,6 +16,14 @@ def get_employee_name(e_id):
     return name
 
 
+def get_employee_username(e_id):
+    user_url = 'https://jsonplaceholder.typicode.com/users/{}'.format(e_id)
+    user = requests.get(user_url)
+    user.raise_for_status()
+    username = user.json().get('username')
+    return username
+
+
 def get_employee_tasks(e_id):
     payload = 'userId={}'.format(e_id)
     tasks_url = 'https://jsonplaceholder.typicode.com/todos?'
@@ -64,6 +72,6 @@ def export_to_csv(filename, e_id, name, tasks):
 
 if __name__ == '__main__':
     employee_id = int(sys.argv[1])
-    employee_name = get_employee_name(employee_id)
+    employee_username = get_employee_username(employee_id)
     employee_tasks = get_employee_tasks(employee_id)
-    export_to_csv(sys.argv[1], employee_id, employee_name, employee_tasks)
+    export_to_csv(sys.argv[1], employee_id, employee_username, employee_tasks)

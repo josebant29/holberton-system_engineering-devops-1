@@ -16,6 +16,14 @@ def get_employee_name(e_id):
     return name
 
 
+def get_employee_username(e_id):
+    user_url = 'https://jsonplaceholder.typicode.com/users/{}'.format(e_id)
+    user = requests.get(user_url)
+    user.raise_for_status()
+    username = user.json().get('username')
+    return username
+
+
 def get_employee_tasks(e_id):
     payload = 'userId={}'.format(e_id)
     tasks_url = 'https://jsonplaceholder.typicode.com/todos?'
@@ -86,9 +94,9 @@ def export_all_employee_data(filename):
     users.raise_for_status()
     for user in users.json():
         e_id = user.get('id')
-        name = user.get('name')
+        username = user.get('username')
         tasks = get_employee_tasks(e_id)
-        user_data = format_user_data(e_id, name, tasks)
+        user_data = format_user_data(e_id, username, tasks)
         wrapper[str(e_id)] = user_data[str(e_id)]
     export_to_json(filename, wrapper)
 

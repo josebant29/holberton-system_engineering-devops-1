@@ -4,7 +4,6 @@ Returns info for a given employee using API.
 """
 
 import requests
-import sys
 
 
 def top_ten(subreddit):
@@ -23,7 +22,3 @@ def top_ten(subreddit):
         print(None)
     for post in top:
         print(post.get('data').get('title'))
-
-
-if __name__ == '__main__':
-    top_ten('showerthoughts')

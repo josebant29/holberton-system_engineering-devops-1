@@ -4,7 +4,6 @@ Returns info for a given employee using API.
 """
 
 import requests
-import sys
 
 
 def number_of_subscribers(subreddit):
@@ -22,7 +21,3 @@ def number_of_subscribers(subreddit):
     if not subs:
         return 0
     return subs
-
-
-if __name__ == '__main__':
-    print(number_of_subscribers('showerthoughts'))

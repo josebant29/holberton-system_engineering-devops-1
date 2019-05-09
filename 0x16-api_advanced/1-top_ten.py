@@ -8,6 +8,9 @@ import sys
 
 
 def top_ten(subreddit):
+    """
+    Prints the top ten 'hot' posts for a subreddit.
+    """
 
     headers = {'User-agent': 'Wescott'}
 

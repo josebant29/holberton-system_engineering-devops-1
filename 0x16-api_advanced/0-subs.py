@@ -8,6 +8,9 @@ import sys
 
 
 def number_of_subscribers(subreddit):
+    """
+    Returns the number of subs for a given subreddit.
+    """
 
     headers = {'User-agent': 'Wescott'}
 

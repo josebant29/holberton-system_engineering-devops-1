@@ -16,7 +16,6 @@ def top_ten(subreddit):
     base = 'https://www.reddit.com/'
     query = '/r/{}/hot.json?limit=10'.format(subreddit)
     response = requests.get(base + query, headers=headers)
-    response.raise_for_status()
     top = response.json().get('data', {}).get('children', [])
     if not top:
         print(None)

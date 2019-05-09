@@ -16,7 +16,6 @@ def number_of_subscribers(subreddit):
     base = 'https://www.reddit.com/'
     query = '/r/{}/about.json'.format(subreddit)
     response = requests.get(base + query, headers=headers)
-    response.raise_for_status()
     subs = response.json().get('data', {}).get('subscribers')
     if not subs:
         return 0

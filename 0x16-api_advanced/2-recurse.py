@@ -18,6 +18,8 @@ def recurse(subreddit, hot_list=[], after=None):
     response = requests.get(base + query, headers=headers)
     top = response.json().get('data', {}).get('children', [])
     after = response.json().get('data', {}).get('after')
+    if not top:
+        return None
     if not after:
         return hot_list
     for post in top:

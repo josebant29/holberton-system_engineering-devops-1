@@ -1,7 +1,5 @@
 # Change Nginx open file limit
 exec { 'update':
-  command => '/bin/sed -ie \'s/-n 15/-n 2000/\' /etc/default/nginx'
-}
-exec { 'restart':
-  command => '/etc/init.d/nginx restart'
+  command => 'sed -i "s/15/2000/" /etc/default/nginx && /etc/init.d/nginx restart',
+  path  => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games'
 }
